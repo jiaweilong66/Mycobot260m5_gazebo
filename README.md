@@ -58,9 +58,9 @@ ls /dev/tty*
 
 ```bash
 sudo chmod -R 777 /dev/ttyACM0  or sudo chmod -r 777 /dev/ttyUSB0
-sudo chmod -R 777 Mycobot260m5_gazebo/Mycobot260m5_gazebo/scripts/robot1.py
-sudo chmod -R 777 Mycobot260m5_gazebo/Mycobot260m5_gazebo/robot2.py
-sudo chmod -R 777 Mycobot260m5_gazebo/Mycobot260m5_gazebo/scripts/robot3.py
+sudo chmod -R 777 Mycobot260m5_gazebo/Mycobot260m5_gazebo/scripts/robot.py
+sudo chmod -R 777 Mycobot260m5_gazebo/Mycobot260m5_gazebo/robot1.py
+sudo chmod -R 777 Mycobot260m5_gazebo/Mycobot260m5_gazebo/scripts/robot2.py
 roscor
 ```
 
@@ -75,7 +75,7 @@ roslaunch Mycobot260m5_gazebo slider.launch _port:=/dev/ttyACM0 _baud:=115200
 
 ```bash
 source devel/setup.bash
-rosrun Mycobot260m5_gazebo  robot1.py _port:=/dev/ttyACM0 _baud:=115200
+rosrun Mycobot260m5_gazebo  robot.py _port:=/dev/ttyACM0 _baud:=115200
 ```
 
 同样记得把端口号修改成上一步查询到的端口号。如果运行成功将会看到如下的终端提示：
@@ -99,7 +99,7 @@ roslaunch Mycobot260m5_gazebo follower.launch _port:=/dev/ttyACM0
 
 ```bash
 source devel/setup.bash
-rosrun Mycobot260m5_gazebo robot2.py _port:=/dev/ttyACM0 _baud:=115200
+rosrun Mycobot260m5_gazebo robot1.py _port:=/dev/ttyACM0 _baud:=115200
 ```
 
 现在当我们操控实际机械臂的位姿，我们可以看到Gazebo中的机械臂也会跟着一起运动到相同的位姿。
@@ -116,7 +116,7 @@ roslaunch Mycobot260m5_gazebo teleop_keyboard.launch _port:=/dev/ttyACM0 _baud:=
 
 ```bash
 source devel/setup.bash
-rosrun Mycobot260m5_gazebo robot3.py _port:=/dev/ttyACM0 _baud:=115200
+rosrun Mycobot260m5_gazebo robot2.py _port:=/dev/ttyACM0 _baud:=115200
 ```
 
 如果运行成功，我们将在终端看到如下的输出信息：
